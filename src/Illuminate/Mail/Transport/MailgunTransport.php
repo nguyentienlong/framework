@@ -48,7 +48,8 @@ class MailgunTransport extends Transport
     {
         $this->client = $client;
         $this->key = $key;
-        $this->setDomain($domain);
+        $this->domain = $domain;
+        $this->setUrl($domain);
     }
 
     /**
@@ -134,13 +135,21 @@ class MailgunTransport extends Transport
     /**
      * Set the domain being used by the transport.
      *
-     * @param  string  $domain
-     * @return void
+     * @return string
      */
     public function setDomain($domain)
     {
-        $this->url = 'https://api.mailgun.net/v3/'.$domain.'/messages.mime';
-
         return $this->domain = $domain;
+    }
+
+    /**
+     * Set the url being used by the transport.
+     *
+     * @param  string  $domain
+     * @return void
+     */
+    public function setUrl($domain)
+    {
+        return $this->url = 'https://api.mailgun.net/v3/'.$domain.'/messages.mime';
     }
 }
