@@ -37,7 +37,7 @@ class MandrillTransport extends Transport
     /**
      * @param \Swift_Mime_Message $message
      * @param array $failedRecipients An array of failures by-reference
-     * @return mixed
+     * @return int|string
      */
     public function send(Swift_Mime_Message $message, &$failedRecipients = null)
     {

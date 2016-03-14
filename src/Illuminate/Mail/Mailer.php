@@ -144,7 +144,7 @@ class Mailer implements MailerContract, MailQueueContract
      * @param  string|array  $view
      * @param  array  $data
      * @param  \Closure|string  $callback
-     * @return mixed
+     * @return int|string
      */
     public function send($view, array $data, $callback)
     {
@@ -375,7 +375,7 @@ class Mailer implements MailerContract, MailQueueContract
      * Send a Swift Message instance.
      *
      * @param  \Swift_Message  $message
-     * @return mixed
+     * @return int|string
      */
     protected function sendSwiftMessage($message)
     {
